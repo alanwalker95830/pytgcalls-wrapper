@@ -1,0 +1,7 @@
+__pycache__
+*.session
+raw/
+main.py
+*.session-journal
+dist/
+*egg*
