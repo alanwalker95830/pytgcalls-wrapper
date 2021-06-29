@@ -25,7 +25,7 @@ class AsyncConverter(AsyncController):
             return output
 
         input = await self._solve_input(input)
-        code, _, _ = await run_async(self._get_ffmpeg_cmd(input))
+        code, _, _ = await run_async(self._get_ffmpeg_cmd(input, output))
 
         if code != 0:
             raise FFmpegError(f"Got a non-zero return code: {code}")
@@ -46,13 +46,13 @@ class SyncConverter(SyncController):
         return input
 
     def convert(self, input: str) -> str:
-        input = self._solve_input(input)
         output = self._get_output(input)
 
         if os.path.isfile(output):
             return output
 
-        code, _, _ = run_sync(self._get_ffmpeg_cmd(input))
+        input = self._solve_input(input)
+        code, _, _ = run_sync(self._get_ffmpeg_cmd(input, output))
 
         if code != 0:
             raise FFmpegError(f"Got a non-zero return code: {code}")

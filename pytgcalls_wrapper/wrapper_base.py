@@ -22,13 +22,13 @@ class WrapperBase:
         if not os.path.isdir(raw_dir):
             os.mkdir(raw_dir)
 
-    def _get_output(self, input: str):
+    def _get_output(self, input: str) -> str:
         return os.path.join(self.raw_dir,  hashlib.md5(input.encode()).hexdigest())
 
-    def _get_ffmpeg_cmd(self, input: str):
-        return f"{self.ffmpeg} -y -i {input} -f s16le -ac 1 -ar 48000 -acodec pcm_s16le {self._get_output(input)}"
+    def _get_ffmpeg_cmd(self, input: str,  output: str) -> str:
+        return f"{self.ffmpeg} -y -i {input} -f s16le -ac 1 -ar 48000 -acodec pcm_s16le {output}"
 
-    def _get_youtube_dl_cmd(self, input: str):
+    def _get_youtube_dl_cmd(self, input: str) -> str:
         return f"{self.youtube_dl} -x -g \"{input}\""
 
     def _make_sure_in_call(self, chat_id: int):
