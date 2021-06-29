@@ -39,7 +39,13 @@ Advantages:
 #### YouTube videos
 
 ```py
-await wrapper.play(-123456789, "http://youtube.com/watch?v=")
+await wrapper.play(-123456789, "https://youtube.com/watch?v=9KAQaKydqA0")
+```
+
+### Links
+
+```py
+await wrapper.play(-123456789, "http://somewebsite.com/path/to/somefile.webm")
 ```
 
 #### Local files
@@ -55,13 +61,13 @@ Advantage: You get warned if the request can't be made.
 #### Pausing
 
 ```py
-await wrapper.pause(-123456789)
+wrapper.pause(-123456789)
 ```
 
 #### Resuming
 
 ```py
-await wrapper.resume(-123456789)
+wrapper.resume(-123456789)
 ```
 
 More to come soon!
