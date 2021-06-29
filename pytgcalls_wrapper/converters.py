@@ -19,12 +19,12 @@ class AsyncConverter(AsyncController):
         return input
 
     async def convert(self, input: str) -> str:
-        input = await self._solve_input(input)
         output = self._get_output(input)
 
         if os.path.isfile(output):
             return output
 
+        input = await self._solve_input(input)
         code, _, _ = await run_async(self._get_ffmpeg_cmd(input))
 
         if code != 0:
