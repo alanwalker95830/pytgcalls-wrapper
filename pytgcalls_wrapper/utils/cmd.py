@@ -19,6 +19,7 @@ def run_sync(cmd: str) -> Tuple[int, bytes, bytes]:
         cmd,
         stdin=None,
         stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE
+        stderr=subprocess.PIPE,
+        shell=True
     )
     return prc.returncode, prc.stdout, prc.stderr
