@@ -20,7 +20,3 @@ class NotPlaying(WrapperError):
 
 class NotPaused(WrapperError):
     pass
-
-
-__all__ = ["WrapperError", "FFmpegError", "YouTubeDLError",
-           "NotInCall", "NotPlaying", "NotPaused"]

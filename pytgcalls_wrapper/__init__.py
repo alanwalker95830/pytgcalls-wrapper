@@ -1,3 +1,5 @@
-from .pytgcalls_wrapper import Wrapper
+from .wrappers import AsyncWrapper, SyncWrapper
 
-__all__ = ["Wrapper"]
+Wrapper = AsyncWrapper
+
+__all__ = ["Wrapper", "SyncWrapper"]
