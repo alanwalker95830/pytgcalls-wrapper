@@ -4,10 +4,21 @@
 
 ---
 
+## Features
+
+- No need to care about audio convertion.
+- Play directly from URLs, YouTube and local files.
+- Get warned if can't be paused or resumed.
+- Async + Sync support.
+
 ## Requirements
 
 1. FFmpeg
 2. YouTube DL
+
+## Full examples
+
+See the [`examples`](./examples) folder.
 
 ## Installation
 
@@ -29,34 +40,27 @@ from pytgcalls_wrapper import Wrapper
 wrapper = Wrapper(pytgcalls)
 ```
 
-### Playing
-
-Advantages:
-
-- No need to care about audio convertion.
-- Play directly from a local file, YouTube and URLs
+### Streaming
 
 #### YouTube videos
 
 ```py
-await wrapper.play(-123456789, "https://youtube.com/watch?v=9KAQaKydqA0")
+wrapper.stream(-123456789, "https://youtube.com/watch?v=9KAQaKydqA0")
 ```
 
 ### Links
 
 ```py
-await wrapper.play(-123456789, "http://somewebsite.com/path/to/somefile.webm")
+wrapper.stream(-123456789, "http://somewebsite.com/path/to/somefile.webm")
 ```
 
 #### Local files
 
 ```py
-await wrapper.play(-123456789, "/path/to/file.mp3")
+wrapper.stream(-123456789, "/path/to/file.mp3")
 ```
 
 ### Controlling
-
-Advantage: You get warned if the request can't be made.
 
 #### Pausing
 
