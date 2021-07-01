@@ -60,6 +60,8 @@ wrapper.stream(-123456789, "http://somewebsite.com/path/to/somefile.webm")
 wrapper.stream(-123456789, "/path/to/file.mp3")
 ```
 
+##### Note: make sure you don't pass anything to the file parameter other than things like examples above for improved security.
+
 ### Controlling
 
 #### Pausing
