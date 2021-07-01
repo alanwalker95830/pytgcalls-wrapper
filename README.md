@@ -42,7 +42,11 @@ wrapper = Wrapper(pytgcalls)
 
 ### Streaming
 
+The stream function joins the call if it didn't previously, otherwise just changes stream. Converted files are cached and won't be reconverted.
+
 #### YouTube videos
+
+YouTube videos are cached and won't be redownloaded.
 
 ```py
 wrapper.stream(-123456789, "https://youtube.com/watch?v=9KAQaKydqA0")
